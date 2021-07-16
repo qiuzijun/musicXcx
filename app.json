@@ -5,6 +5,10 @@
     "pages/Search/Search",
     "pages/hotSong/hotSong",
     "pages/play/play",
+    "pages/hotGd/hotGd", 
+    "pages/hotGdGequ/hotGdGequ",
+    "pages/gfGedan/gfGedan",
+    "pages/gfGequ/gfGequ",
     "pages/logs/logs" 
   ],
   "window": {

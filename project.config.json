@@ -5,7 +5,7 @@
   },
   "setting": {
     "urlCheck": false,
-    "es6": true,
+    "es6": false,
     "enhance": false,
     "postcss": true,
     "preloadBackgroundData": false,
@@ -22,8 +22,8 @@
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "lazyloadPlaceholderEnable": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
+    "useMultiFrameRuntime": false,
+    "useApiHook": false,
     "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],

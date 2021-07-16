@@ -1,23 +1,79 @@
+<!-- 歌曲搜索 -->
 <view class="search">
-<navigator url="../Search/Search" hover-class="none">
-<text selectable="false">搜索</text>
-</navigator>
+  <navigator url="../Search/Search" hover-class="none">
+    <text selectable="false">搜索</text>
+  </navigator>
 </view>
+<!-- 歌曲推荐 -->
 <view class="tuiJian">
-    <view class="tuiJianTop">
-        <text selectable="false">歌曲推荐</text>
-          <navigator url="../hotSong/hotSong" hover-class="none">
-            <text decode="true" selectable="false">更多&gt;</text>
-          </navigator>
+  <view class="tuiJianTop">
+    <text selectable="false">歌曲推荐</text>
+    <navigator url="../hotSong/hotSong" hover-class="none">
+      <text decode="true" selectable="false">更多&gt;</text>
+    </navigator>
+  </view>
+  <view class="tuiJianBtn">
+    <view wx:for="{{musicList}}" wx:for-index="Id" wx:for-item="item" wx:if="{{Id<6}}" wx:key="Id" class="musicTuiList"
+      bindtap="play">
+      <image src="{{item.picUrl}}"></image>
+      <view class="musicName">
+        <text decode="true">{{item.name}}</text>
+        <text decode="true">{{item.song.artists[0].name}}•{{item.name}}</text>
+      </view>
+      <text decode="true">&gt;</text>
     </view>
-    <view class="tuiJianBtn">
-        <view wx:for="{{musicList}}" wx:for-index="Id" wx:for-item="item" wx:if="{{Id<6}}" wx:key="Id" class="musicTuiList" bindtap="play">
-          <image src="{{item.picUrl}}"></image>
-          <view class="musicName">
-              <text decode="true">{{item.name}}</text>
-              <text decode="true">{{item.song.artists[0].name}}•{{item.name}}</text>
-          </view>
-          <text decode="true">&gt;</text>
-        </view>
+  </view>
+</view>
+<!-- 热门歌单 -->
+<wxs module="filters" src="../../utils/addmul.wxs"></wxs>
+<view class="rmgd">
+  <view class="rmgdTop">
+    <text selectable="false">热门歌单</text>
+    <navigator url="../hotGd/hotGd" hover-class="none">
+      <text decode="true" selectable="false">更多&gt;</text>
+    </navigator>
+  </view>
+  <scroll-view scroll-x>
+    <view wx:for="{{musicHot}}" wx:for-index="Id" wx:for-item="item" wx:key="Id" class="scroll-item-x" bindtap="hotGe">
+      <image src="{{item.coverImgUrl}}"></image>
+      <text class="hot">{{filters.toFix1(item.playCount/1000)}}万</text>
+      <view class="name">{{item.name}}</view>
     </view>
+  </scroll-view>
+</view>
+<!-- 官方歌单 -->
+<view class="gfgd">
+  <view class="gfgdTop">
+    <text selectable="false">官方歌单</text>
+    <navigator url="../gfGedan/gfGedan" hover-class="none">
+      <text decode="true" selectable="false">更多&gt;</text>
+    </navigator>
+  </view>
+  <scroll-view scroll-x>
+    <view wx:for="{{musicGf}}" wx:for-index="Id" wx:for-item="item" wx:key="Id" class="scroll-item-x" bindtap="gfGequ">
+      <image src="{{item.coverImgUrl}}"></image>
+      <text class="hot">{{filters.toFix1(item.playCount/1000)}}万</text>
+      <view class="name">{{item.name}}</view>
+    </view>
+  </scroll-view>
+</view>
+<!-- 巅峰榜 -->
+<view class="topList">
+  <view class="topListTop">
+    <text selectable="false">官方歌单</text>
+  </view>
+  <view class="topListBtn">
+    <view class="soaringList">
+      <view class="soaringListLeft"></view>
+      <view class="soaringListRight"></view>
+    </view>
+    <view class="hotSongList">
+      <view class="hotSongListLeft"></view>
+      <view class="hotSongListRight"></view>
+    </view>
+    <view class="newSongs">
+      <view class="newSongsLeft"></view>
+      <view class="newSongsRight"></view>
+    </view>
+  </view>
 </view>
