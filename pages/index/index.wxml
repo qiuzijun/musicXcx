@@ -1,23 +1,23 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class="search">
+<navigator url="../Search/Search" hover-class="none">
+<text selectable="false">搜索</text>
+</navigator>
+</view>
+<view class="tuiJian">
+    <view class="tuiJianTop">
+        <text selectable="false">歌曲推荐</text>
+          <navigator url="../hotSong/hotSong" hover-class="none">
+            <text decode="true" selectable="false">更多&gt;</text>
+          </navigator>
+    </view>
+    <view class="tuiJianBtn">
+        <view wx:for="{{musicList}}" wx:for-index="Id" wx:for-item="item" wx:if="{{Id<6}}" wx:key="Id" class="musicTuiList" bindtap="play">
+          <image src="{{item.picUrl}}"></image>
+          <view class="musicName">
+              <text decode="true">{{item.name}}</text>
+              <text decode="true">{{item.song.artists[0].name}}•{{item.name}}</text>
+          </view>
+          <text decode="true">&gt;</text>
+        </view>
+    </view>
 </view>

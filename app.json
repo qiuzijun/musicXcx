@@ -1,14 +1,39 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/Dome/Dome",
+    "pages/Search/Search",
+    "pages/hotSong/hotSong",
+    "pages/play/play",
+    "pages/logs/logs" 
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "QQ音乐",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
   },
-  "style": "v2",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "音乐",
+        "iconPath": "./pages/img/yinyue1.png",
+        "selectedIconPath": "./pages/img/yinyue.png"
+      },
+      {
+        "pagePath": "pages/Dome/Dome",
+        "text": "视频",
+        "iconPath": "./pages/img/mv1.png",
+        "selectedIconPath": "./pages/img/mv2.png"
+      }
+    ],
+    "color": "black",
+    "selectedColor": "#3b91c2"
+  },
+  "networkTimeout": {
+    "request": 5000
+  },
   "sitemapLocation": "sitemap.json"
 }

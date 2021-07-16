@@ -1,19 +1,39 @@
 // app.js
 App({
+  globalData:{
+    musicList:[]
+  },
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    let that = this;
+    const requestTask = wx.request({
+      url: 'http://192.168.0.101:3000/personalized/newsong',
+      data:{
+        limit:100
+      },
+      success(res){
+        console.log(res.data.result);
+        try {
+          wx.setStorageSync('gedan', res.data.result)
+        } catch (error) {
+          console.log(error);
+        }
+        
+      },
+      fail(error){
+        console.log(error);
       }
     })
+    
   },
   globalData: {
-    userInfo: null
+    username:null
+  },
+  onPageNotFound(){
+    wx.switchTab({
+      url: 'pages/logs/logs',
+    })
+  },
+  onLoad(options){
+    console.log(this.globalData.username);
   }
 })

@@ -1,19 +1,88 @@
 /**index.wxss**/
-.userinfo {
+page{
+  background-color: #fafafa;
+}
+.search{
+  width: 700rpx;
+  height: 70rpx;
+  margin: 20rpx auto;
+  font-size: 26rpx;
+  color: #ccc;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.search>navigator{
+  width: 700rpx;
+  height: 70rpx;
+}
+.search>navigator>text{
+  width: 60rpx;
+  height: 70rpx;
+  margin:17rpx auto 0;
+  display: block;
+}
+.tuiJian{
+  width: 700rpx;
+  height: 1000rpx;
+  margin: 80rpx auto 0;
+  /* background-color: orange; */
+}
+.tuiJian>.tuiJianTop{
+  width: 700rpx;
+  height: 40rpx;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+}
+.tuiJian>.tuiJianTop>text{
+  font-weight: bold;
+}
+.tuiJian>.tuiJianTop>navigator>text{
+  font-size: 26rpx;
+  color: #ccc;
+}
+.tuiJian>.tuiJianBtn{
+  width: 700rpx;
+  height: 1000rpx;
+  /* background-color: yellowgreen; */
+}
+.tuiJian>.tuiJianBtn>.musicTuiList{
+  width: 700rpx;
+  height: 140rpx;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+.tuiJian>.tuiJianBtn>.musicTuiList>.musicName{
+  width: 500rpx;
+  height: 140rpx;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: #aaa;
+  justify-content: space-between;
+  /* background-color: aqua; */
 }
-
-.userinfo-avatar {
+.tuiJian>.tuiJianBtn>.musicTuiList>.musicName>text:first-child{
+  font-size: 30rpx;
+  margin-top: 30rpx;
+  white-space: nowrap;
   overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+  text-overflow: ellipsis;
 }
-
-.usermotto {
-  margin-top: 200px;
+.tuiJian>.tuiJianBtn>.musicTuiList>.musicName>text:last-child{
+  font-size: 26rpx;
+  color: #ccc;
+  margin-bottom: 25rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tuiJian>.tuiJianBtn>.musicTuiList>text{
+  margin-top: 55rpx;
+}
+.tuiJian>.tuiJianBtn>.musicTuiList>image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 5px;
 }
