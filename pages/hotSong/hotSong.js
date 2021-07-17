@@ -1,66 +1,60 @@
 // pages/hotSong/hotSong.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    request:[],
+    index:0,
+    ismusicImg:'',
+    ismusicName:'',
+    ismusicBf:'',
+    ismusicId:'',
+    ismusicUrl:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      request:wx.getStorageSync('tjGequ')
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  musicP(e){
+    let that = this
+    // console.log(e.currentTarget.dataset.name.id);
+    // console.log(that.data.ismusicId);
+    this.setData({
+      ismusicImg:e.currentTarget.dataset.name.picUrl,
+      ismusicName:e.currentTarget.dataset.name.name,
+      ismusicId:e.currentTarget.dataset.name.id,
+      index:1
+    })
+    
+    wx.request({
+      url: 'http://192.168.0.102:3000/song/url',
+      data:{
+        id:that.data.ismusicId
+      },
+      success(res){
+        console.log(res);
+        that.setData({
+          ismusicUrl:res.data.data[0].url
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  audioPlay(){
+    let a = 0
+    const bgMusic = wx.getBackgroundAudioManager()
+    bgMusic.src=this.data.ismusicUrl,
+    bgMusic.title = this.data.ismusicName
+    if (a = 0) {
+      bgMusic.play()
+      a = 1
+    }else{
+      bgMusic.pause()
+      a = 0
+    }
+    
+   
   }
 })

@@ -1,2 +1,24 @@
 <!--pages/hotSong/hotSong.wxml-->
-<view>热歌榜</view>
+<view class="hotSong">热歌榜</view>
+
+<view class="center">
+  <view class="hotSongList" wx:for="{{request}}" wx:for-index="Id" wx:for-item="item" wx:key="Id" bindtap="musicP" data-name="{{item}}">
+    <view class="hotSongListL">
+        <text selectable="false">{{Id+1}}</text>
+    </view>
+    <view class="hotSongListR">
+        <view class="hotSongListRt">
+          <text selectable="false" decode="true">{{item.name}}</text>
+        </view>
+        <view class="hotSongListRb">
+          <text selectable="false" decode="true">{{item.song.artists[0].name}}&emsp;•&emsp;{{item.name}}</text>
+        </view>
+    </view>
+</view>
+</view>
+<view class="musicPlay" hidden="{{index == 0}}">
+    <image src="{{ismusicImg}}"></image>
+    <text selectable="false">{{ismusicName}}</text>
+    <!-- <image src="{{ismusicBf}}"></image> -->
+    <button bindtap="audioPlay" size="mini">播放/暂停</button>
+</view>

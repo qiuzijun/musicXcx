@@ -6,7 +6,11 @@ Page({
     // 歌单
     musicHot:[],
     // 官方
-    musicGf:[]
+    musicGf:[],
+    // 飙升榜
+    musicSoaringList:[],
+    // 新歌榜
+    musicnewSong:[]
   },
   onLoad(){
     let that = this;
@@ -25,7 +29,6 @@ Page({
       // 获取本地缓存歌单
      var hot =  wx.getStorageSync('remGedan')
      if(hot){
-       
       that.setData({
         musicHot:hot                                   
       })
@@ -45,6 +48,22 @@ Page({
     } catch (error) {
       console.log(error);
     }
+    try {
+      // 获取本地缓存飙升榜
+     var sn =  wx.getStorageSync('soaringListxi')
+     console.log(sn);
+     if(sn){
+      that.setData({
+        musicSoaringList:sn                                   
+      })
+     }
+    } catch (error) {
+      console.log(error);
+    }
+    // 新歌榜
+    this.setData({
+      musicnewSong:wx.getStorageSync('newSongsxi')
+    })
   },
   
   // 跳转播放页面
@@ -64,6 +83,7 @@ Page({
     wx.navigateTo({
       url: '../gfGequ/gfGequ',
     })
-  }
+  },
+  
 
 })

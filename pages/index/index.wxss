@@ -186,11 +186,43 @@ scroll-view{
   border-radius:20rpx 0 0 20rpx;
   background-color: #f2f2f2;
 }
+.soaringList>.soaringListLeft>.soaringListLeftc{
+  width: 450rpx;
+  height: 190rpx;
+  margin: 15rpx auto 0;
+  /* background-color: pink; */
+}
+/* 飙升榜 */
+.soaringList>.soaringListLeft>.soaringListLeftc>view:first-child{
+  font-size: 30rpx;
+}
+.soaringList>.soaringListLeft>.soaringListLeftc>.viewList{
+  width: 480rpx;
+  margin-top: 15rpx;
+  font-size: 26rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.soaringList>.soaringListLeft>.soaringListLeftc>view>text:first-child{
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.soaringList>.soaringListLeft>.soaringListLeftc>.viewList>.SoaringListName{
+  width: 480rpx;
+  font-size: 26rpx;
+}
 .soaringList>.soaringListRight{
   width: 220rpx;
   height: auto;
   border-radius:0 20rpx 20rpx 0;
   background-color: khaki;
+}
+.soaringList>.soaringListRight>image{
+  width: 220rpx;
+  height: 220rpx;
+  border-radius:0 20rpx 20rpx 0;
+  /* background-color: khaki; */
 }
 .hotSongList>.hotSongListLeft{
   width: 480rpx;
@@ -198,17 +230,87 @@ scroll-view{
   border-radius:20rpx 0 0 20rpx;
   background-color: #f2f2f2;
 }
+.hotSongList>.hotSongListLeft>.hotSongListLeftc{
+  width: 450rpx;
+  height: 190rpx;
+  margin: 15rpx auto 0;
+  /* background-color: pink; */
+}
+/* 热歌榜 */
+.hotSongList>.hotSongListLeft>.hotSongListLeftc>view:first-child{
+  font-size: 30rpx;
+}
+.hotSongList>.hotSongListLeft>.hotSongListLeftc>.viewList{
+  width: 480rpx;
+  margin-top: 15rpx;
+  font-size: 26rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hotSongList>.hotSongListLeft>.hotSongListLeftc>view>text:first-child{
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.hotSongList>.hotSongListLeft>.hotSongListLeftc>.viewList>.hotSongListName{
+  width: 480rpx;
+  font-size: 26rpx;
+}
 .hotSongList>.hotSongListRight{
   width: 220rpx;
   height: auto;
   border-radius:0 20rpx 20rpx 0;
   background-color: khaki;
 }
+.hotSongList>.hotSongListRight>image{
+  width: 220rpx;
+  height: 220rpx;
+  border-radius:0 20rpx 20rpx 0;
+  /* background-color: khaki; */
+}
 .newSongs>.newSongsLeft{
   width: 480rpx;
   height: auto;
   border-radius:20rpx 0 0 20rpx;
   background-color: #f2f2f2;
+}
+.newSongs>.newSongsLeft>.newSongsLeftc{
+  width: 450rpx;
+  height: 190rpx;
+  margin: 15rpx auto 0;
+  /* background-color: pink; */
+}
+/* 新歌榜 */
+.newSongs>.newSongsLeft>.newSongsLeftc>view:first-child{
+  font-size: 30rpx;
+}
+.newSongs>.newSongsLeft>.newSongsLeftc>.viewList{
+  width: 480rpx;
+  margin-top: 15rpx;
+  font-size: 26rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.newSongs>.newSongsLeft>.newSongsLeftc>view>text:first-child{
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.newSongs>.newSongsLeft>.newSongsLeftc>.viewList>.newSongsName{
+  width: 480rpx;
+  font-size: 26rpx;
+}
+.newSongs>.newSongsRight{
+  width: 220rpx;
+  height: auto;
+  border-radius:0 20rpx 20rpx 0;
+  background-color: khaki;
+}
+.newSongs>.newSongsRight>image{
+  width: 220rpx;
+  height: 220rpx;
+  border-radius:0 20rpx 20rpx 0;
+  /* background-color: khaki; */
 }
 .newSongs>.newSongsRight{
   width: 220rpx;

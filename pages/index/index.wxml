@@ -60,20 +60,59 @@
 <!-- 巅峰榜 -->
 <view class="topList">
   <view class="topListTop">
-    <text selectable="false">官方歌单</text>
+    <text selectable="false">巅峰榜</text>
   </view>
+  <!-- 飙升榜 -->
   <view class="topListBtn">
     <view class="soaringList">
-      <view class="soaringListLeft"></view>
-      <view class="soaringListRight"></view>
+      <view class="soaringListLeft">
+        <view class="soaringListLeftc">
+          <view>飙升榜</view>
+          <view wx:for="{{musicSoaringList}}" wx:for-index="Id" wx:for-item="item" wx:key="Id" wx:if="{{Id<3}}"
+            class="viewList">
+            <text>{{Id+1}}.</text>
+            <text class="SoaringListName" selectable="false"
+              decode="true">{{item.name}}&emsp;-&emsp;{{item.ar[0].name}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="soaringListRight">
+        <image src="{{musicSoaringList[0].al.picUrl}}"></image>
+      </view>
     </view>
+    <!-- 热歌榜 -->
     <view class="hotSongList">
-      <view class="hotSongListLeft"></view>
-      <view class="hotSongListRight"></view>
+      <view class="hotSongListLeft">
+        <view class="hotSongListLeftc">
+          <view>热歌榜</view>
+          <view wx:for="{{musicList}}" wx:for-index="Id" wx:for-item="item" wx:key="Id" wx:if="{{Id<3}}"
+            class="viewList">
+            <text>{{Id+1}}.</text>
+            <text class="hotSongListLeftName" selectable="false"
+              decode="true">{{item.name}}&emsp;-&emsp;{{item.song.artists[0].name}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="hotSongListRight">
+        <image src="{{musicList[0].picUrl}}"></image>
+      </view>
     </view>
+    <!-- 新歌榜 -->
     <view class="newSongs">
-      <view class="newSongsLeft"></view>
-      <view class="newSongsRight"></view>
+      <view class="newSongsLeft">
+        <view class="newSongsLeftc">
+          <view>新歌榜</view>
+          <view wx:for="{{musicnewSong}}" wx:for-index="Id" wx:for-item="item" wx:key="Id" wx:if="{{Id<3}}"
+            class="viewList">
+            <text>{{Id+1}}.</text>
+            <text class="newSongsName" selectable="false"
+              decode="true">{{item.name}}&emsp;-&emsp;{{item.ar[0].name}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="newSongsRight">
+        <image src="{{musicnewSong[0].al.picUrl}}"></image>
+      </view>
     </view>
   </view>
 </view>

@@ -1,1 +1,72 @@
 /* pages/hotSong/hotSong.wxss */
+.hotSong{
+  width: 700rpx;
+  margin:45rpx auto 0;
+  font-weight: bold;
+}
+.center{
+  width: 700rpx;
+  height: 13500rpx;
+  margin:0 auto;
+  /* background-color: red; */
+}
+.hotSongList{
+  width: 700rpx;
+  height: 100rpx;
+  margin:35rpx auto 30rpx;
+  display: flex;
+  justify-content: space-between
+}
+.hotSongListL{
+  width: 35rpx;
+  height: auto;
+  margin-right: 20rpx;
+}
+.hotSongListL>text{
+  line-height: 75rpx;
+}
+.hotSongListR{
+  width: 665rpx;
+  height: auto;
+}
+.hotSongListRt,.hotSongListRb{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hotSongListRt>text{
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  
+}
+.hotSongListRb>text{
+  font-size: 24rpx;
+  color: #ccc;
+  
+}
+.musicPlay{
+  width: 100%;
+  height: 75rpx;
+  background-color: #fafafa;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.musicPlay>image{
+  width: 75rpx;
+  height: 75rpx;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+}
+.musicPlay>text{
+  width: 150rpx;
+  font-size: 26rpx;
+  margin-left: 40rpx;
+  /* display: block; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

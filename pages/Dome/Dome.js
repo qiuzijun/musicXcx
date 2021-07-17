@@ -1,10 +1,12 @@
 // pages/Dome/Dome.js
 Page({
   data:{
-    request:'请求信息'
+    request:[]
   },
-  scrolltoupper(){
-    console.log("哈哈");
+  onLoad(){
+    this.setData({
+      // request:wx.getStorageSync('tjGequ')
+    })
   },
   
 })

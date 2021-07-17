@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "QQ音乐"
+  "navigationBarTitleText": "QQ音乐",
+  "navigationBarBackgroundColor":"#fafafa"
 }
